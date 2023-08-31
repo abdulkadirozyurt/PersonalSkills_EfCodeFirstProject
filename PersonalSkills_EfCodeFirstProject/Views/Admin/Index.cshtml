@@ -10,6 +10,7 @@
         <th>#</th>
         <th>Skill</th>
         <th>Value</th>
+        <th></th>
     </tr>
     
     
@@ -19,6 +20,8 @@
             <td>@item.Id</td>
             <td>@item.Description</td>
             <td>@item.Value</td>
+            <td><a class="btn btn-success" href="/Admin/DeleteSkill/@item.Id">Sil</a> <a class="btn btn-danger" href="/Admin/UpdateSkill/@item.Id">Güncelle</a></td>
+            
         </tr>
     }
 

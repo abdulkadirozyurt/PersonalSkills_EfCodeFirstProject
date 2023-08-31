@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.Mvc;
 using PersonalSkills_EfCodeFirstProject.Models.Contexts;
@@ -35,6 +36,36 @@ namespace PersonalSkills_EfCodeFirstProject.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult DeleteSkill(int id)
+        {
+            var skill = skillsContext.Skills.Find(id);
+            skillsContext.Skills.Remove(skill);
+            skillsContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult UpdateSkill(int id)
+        {
+            var skill = skillsContext.Skills.Find(id);
+
+            return View(skill);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateSkill(Skill s)
+        {
+            var skill = skillsContext.Skills.Find(s.Id);
+            skill.Description = s.Description;
+            skill.Value = s.Value;
+            skillsContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+
 
     }
 }

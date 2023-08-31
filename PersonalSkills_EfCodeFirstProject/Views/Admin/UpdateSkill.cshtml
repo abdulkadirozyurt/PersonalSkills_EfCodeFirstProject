@@ -1,0 +1,23 @@
+﻿@model PersonalSkills_EfCodeFirstProject.Models.Entities.Skill
+@{
+    ViewBag.Title = "UpdateSkill";
+    Layout = "~/Views/Shared/_SkillsLayoutNavbar.cshtml";
+}
+
+<form class="form-group" method="post">
+    
+    @Html.Label("#")
+    @Html.TextBoxFor(x=>x.Id,new {@class="form-control"})
+    <br/>
+    
+    @Html.Label("Description")
+    @Html.TextBoxFor(x=>x.Description,new {@class="form-control"})
+    <br/>
+    
+    @Html.Label("Value")
+    @Html.TextBoxFor(x=>x.Value,new {@class="form-control"})
+    <br/>
+    
+    <button class="btn btn-primary">Güncelle</button>
+</form>
+

@@ -1,0 +1,26 @@
+﻿@using PersonalSkills_EfCodeFirstProject.Models.Entities
+@model List<Skill>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SkillsLayoutNavbar.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Skill</th>
+        <th>Value</th>
+    </tr>
+    
+    
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Description</td>
+            <td>@item.Value</td>
+        </tr>
+    }
+
+</table>
+
